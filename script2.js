@@ -44,3 +44,26 @@ function weatherShowFn(data) {
     
     $('#weather-info').fadeIn();
 }
+
+async function weatherFn(cName) {
+    const temp = `${url}?q=${cName}&appid=${apiKey}&units=metric`;
+
+    try {
+        const res = await fetch(temp);
+        const data = await res.json();
+
+        if (res.ok) {
+            $('#error-message').text('');
+            weatherShowFn(data);
+        } 
+        else {
+            $('#weather-info').hide();
+            $('#error-message').text("Wrong city name. Please enter a valid city.");
+        }
+
+    } 
+    catch (error) {
+        console.error(error);
+        $('#error-message').text("Something went wrong.");
+    }
+}
