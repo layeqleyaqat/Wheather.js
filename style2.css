@@ -13,11 +13,12 @@ body {
 
 .weather-card {
   
-     background: linear-gradient(to right, #4CAF50, #2196F3,#2196F3);
+     background: linear-gradient(to right,#2395f3, #4CAF50, #2196F3,#2196F3);
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    transform: rotateX('angle');
     width: 450px;
 }
 
